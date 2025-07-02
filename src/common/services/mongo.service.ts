@@ -1,17 +1,17 @@
-import { Prop, Schema } from '@nestjs/mongoose'
-import mongoose from 'mongoose'
+import { Prop, Schema } from '@nestjs/mongoose';
+import mongoose from 'mongoose';
 
 @Schema()
 export abstract class BaseMongooseSchema {
   @Prop({ default: new Date() })
-  createdAt?: Date
+  createdAt?: Date;
 
   @Prop({ default: new Date() })
-  updatedAt?: Date
+  updatedAt?: Date;
 
   @Prop({ default: false, index: true })
-  isDeleted?: boolean
+  isDeleted?: boolean;
 
   @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'User', index: true, required: false })
-  createdBy?: string | mongoose.Schema.Types.ObjectId
+  createdBy?: string | mongoose.Schema.Types.ObjectId;
 }

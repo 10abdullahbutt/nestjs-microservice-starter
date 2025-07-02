@@ -1,1 +1,1 @@
-export * from './GrpcController'
+export * from './GrpcController';

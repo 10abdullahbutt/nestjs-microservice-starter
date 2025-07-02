@@ -6,7 +6,7 @@ export const mockExamplesData = [
     __v: 0,
     createdAt: '2025-03-20T20:58:22.103Z',
     isDeleted: false,
-    updatedAt: '2025-03-20T21:30:31.723Z'
+    updatedAt: '2025-03-20T21:30:31.723Z',
   },
   {
     _id: '67dc8170e5fd8cff88066fe8',
@@ -15,7 +15,7 @@ export const mockExamplesData = [
     __v: 0,
     createdAt: '2025-03-20T20:58:22.103Z',
     isDeleted: false,
-    updatedAt: '2025-03-20T21:30:31.723Z'
+    updatedAt: '2025-03-20T21:30:31.723Z',
   },
   {
     _id: '67dc8170e5fd8cff88066fe9',
@@ -24,7 +24,7 @@ export const mockExamplesData = [
     __v: 0,
     createdAt: '2025-03-20T20:58:22.103Z',
     isDeleted: false,
-    updatedAt: '2025-03-20T21:30:31.723Z'
+    updatedAt: '2025-03-20T21:30:31.723Z',
   },
   {
     _id: '67dc8170e5fd8cff88066fea',
@@ -33,7 +33,7 @@ export const mockExamplesData = [
     __v: 0,
     createdAt: '2025-03-20T20:58:22.103Z',
     isDeleted: false,
-    updatedAt: '2025-03-20T21:30:31.723Z'
+    updatedAt: '2025-03-20T21:30:31.723Z',
   },
   {
     _id: '67dc8170e5fd8cff88066feb',
@@ -42,7 +42,7 @@ export const mockExamplesData = [
     __v: 0,
     createdAt: '2025-03-20T20:58:22.103Z',
     isDeleted: false,
-    updatedAt: '2025-03-20T21:30:31.723Z'
+    updatedAt: '2025-03-20T21:30:31.723Z',
   },
   {
     _id: '67dc8170e5fd8cff88066fec',
@@ -51,7 +51,7 @@ export const mockExamplesData = [
     __v: 0,
     createdAt: '2025-03-20T20:58:22.103Z',
     isDeleted: false,
-    updatedAt: '2025-03-20T21:30:31.723Z'
+    updatedAt: '2025-03-20T21:30:31.723Z',
   },
   {
     _id: '67dc8170e5fd8cff88066fed',
@@ -60,7 +60,7 @@ export const mockExamplesData = [
     __v: 0,
     createdAt: '2025-03-20T20:58:22.103Z',
     isDeleted: false,
-    updatedAt: '2025-03-20T21:30:31.723Z'
+    updatedAt: '2025-03-20T21:30:31.723Z',
   },
   {
     _id: '67dc8170e5fd8cff88066fee',
@@ -69,7 +69,7 @@ export const mockExamplesData = [
     __v: 0,
     createdAt: '2025-03-20T20:58:22.103Z',
     isDeleted: false,
-    updatedAt: '2025-03-20T21:30:31.723Z'
+    updatedAt: '2025-03-20T21:30:31.723Z',
   },
   {
     _id: '67dc8170e5fd8cff88066fef',
@@ -78,7 +78,7 @@ export const mockExamplesData = [
     __v: 0,
     createdAt: '2025-03-20T20:58:22.103Z',
     isDeleted: false,
-    updatedAt: '2025-03-20T21:30:31.723Z'
+    updatedAt: '2025-03-20T21:30:31.723Z',
   },
   {
     _id: '67dc8170e5fd8cff88066ff0',
@@ -87,7 +87,7 @@ export const mockExamplesData = [
     __v: 0,
     createdAt: '2025-03-20T20:58:22.103Z',
     isDeleted: false,
-    updatedAt: '2025-03-20T21:30:31.723Z'
+    updatedAt: '2025-03-20T21:30:31.723Z',
   },
   {
     _id: '67dc8170e5fd8cff88066ff1',
@@ -96,7 +96,7 @@ export const mockExamplesData = [
     __v: 0,
     createdAt: '2025-03-20T20:58:22.103Z',
     isDeleted: false,
-    updatedAt: '2025-03-20T21:30:31.723Z'
+    updatedAt: '2025-03-20T21:30:31.723Z',
   },
   {
     _id: '67dc8170e5fd8cff88066ff2',
@@ -105,7 +105,7 @@ export const mockExamplesData = [
     __v: 0,
     createdAt: '2025-03-20T20:58:22.103Z',
     isDeleted: false,
-    updatedAt: '2025-03-20T21:30:31.723Z'
+    updatedAt: '2025-03-20T21:30:31.723Z',
   },
   {
     _id: '67dc8170e5fd8cff88066ff3',
@@ -114,7 +114,7 @@ export const mockExamplesData = [
     __v: 0,
     createdAt: '2025-03-20T20:58:22.103Z',
     isDeleted: false,
-    updatedAt: '2025-03-20T21:30:31.723Z'
+    updatedAt: '2025-03-20T21:30:31.723Z',
   },
   {
     _id: '67dc8170e5fd8cff88066ff4',
@@ -123,7 +123,7 @@ export const mockExamplesData = [
     __v: 0,
     createdAt: '2025-03-20T20:58:22.103Z',
     isDeleted: false,
-    updatedAt: '2025-03-20T21:30:31.723Z'
+    updatedAt: '2025-03-20T21:30:31.723Z',
   },
   {
     _id: '67dc8170e5fd8cff88066ff5',
@@ -132,7 +132,7 @@ export const mockExamplesData = [
     __v: 0,
     createdAt: '2025-03-20T20:58:22.103Z',
     isDeleted: false,
-    updatedAt: '2025-03-20T21:30:31.723Z'
+    updatedAt: '2025-03-20T21:30:31.723Z',
   },
   {
     _id: '67dc8170e5fd8cff88066ff6',
@@ -141,7 +141,7 @@ export const mockExamplesData = [
     __v: 0,
     createdAt: '2025-03-20T20:58:22.103Z',
     isDeleted: false,
-    updatedAt: '2025-03-20T21:30:31.723Z'
+    updatedAt: '2025-03-20T21:30:31.723Z',
   },
   {
     _id: '67dc8170e5fd8cff88066ff7',
@@ -150,7 +150,7 @@ export const mockExamplesData = [
     __v: 0,
     createdAt: '2025-03-20T20:58:22.103Z',
     isDeleted: false,
-    updatedAt: '2025-03-20T21:30:31.723Z'
+    updatedAt: '2025-03-20T21:30:31.723Z',
   },
   {
     _id: '67dc8170e5fd8cff88066ff8',
@@ -159,7 +159,7 @@ export const mockExamplesData = [
     __v: 0,
     createdAt: '2025-03-20T20:58:22.103Z',
     isDeleted: false,
-    updatedAt: '2025-03-20T21:30:31.723Z'
+    updatedAt: '2025-03-20T21:30:31.723Z',
   },
   {
     _id: '67dc8170e5fd8cff88066ff9',
@@ -168,7 +168,7 @@ export const mockExamplesData = [
     __v: 0,
     createdAt: '2025-03-20T20:58:22.103Z',
     isDeleted: false,
-    updatedAt: '2025-03-20T21:30:31.723Z'
+    updatedAt: '2025-03-20T21:30:31.723Z',
   },
   {
     _id: '67dc8170e5fd8cff88066ffa',
@@ -177,7 +177,7 @@ export const mockExamplesData = [
     __v: 0,
     createdAt: '2025-03-20T20:58:22.103Z',
     isDeleted: false,
-    updatedAt: '2025-03-20T21:30:31.723Z'
+    updatedAt: '2025-03-20T21:30:31.723Z',
   },
   {
     _id: '67dc8170e5fd8cff88066ffb',
@@ -186,7 +186,7 @@ export const mockExamplesData = [
     __v: 0,
     createdAt: '2025-03-20T20:58:22.103Z',
     isDeleted: false,
-    updatedAt: '2025-03-20T21:30:31.723Z'
+    updatedAt: '2025-03-20T21:30:31.723Z',
   },
   {
     _id: '67dc8170e5fd8cff88066ffc',
@@ -195,9 +195,9 @@ export const mockExamplesData = [
     __v: 0,
     createdAt: '2025-03-20T20:58:22.103Z',
     isDeleted: false,
-    updatedAt: '2025-03-20T21:30:31.723Z'
-  }
-]
+    updatedAt: '2025-03-20T21:30:31.723Z',
+  },
+];
 
 export const pagenatedExamplesMockData = [
   {
@@ -207,7 +207,7 @@ export const pagenatedExamplesMockData = [
     __v: 0,
     createdAt: '2025-03-20T20:58:22.103Z',
     isDeleted: false,
-    updatedAt: '2025-03-20T21:30:31.723Z'
+    updatedAt: '2025-03-20T21:30:31.723Z',
   },
   {
     _id: '67dc8170e5fd8cff88066fe8',
@@ -216,7 +216,7 @@ export const pagenatedExamplesMockData = [
     __v: 0,
     createdAt: '2025-03-20T20:58:22.103Z',
     isDeleted: false,
-    updatedAt: '2025-03-20T21:30:31.723Z'
+    updatedAt: '2025-03-20T21:30:31.723Z',
   },
   {
     _id: '67dc8170e5fd8cff88066fe9',
@@ -225,7 +225,7 @@ export const pagenatedExamplesMockData = [
     __v: 0,
     createdAt: '2025-03-20T20:58:22.103Z',
     isDeleted: false,
-    updatedAt: '2025-03-20T21:30:31.723Z'
+    updatedAt: '2025-03-20T21:30:31.723Z',
   },
   {
     _id: '67dc8170e5fd8cff88066fea',
@@ -234,7 +234,7 @@ export const pagenatedExamplesMockData = [
     __v: 0,
     createdAt: '2025-03-20T20:58:22.103Z',
     isDeleted: false,
-    updatedAt: '2025-03-20T21:30:31.723Z'
+    updatedAt: '2025-03-20T21:30:31.723Z',
   },
   {
     _id: '67dc8170e5fd8cff88066feb',
@@ -243,7 +243,7 @@ export const pagenatedExamplesMockData = [
     __v: 0,
     createdAt: '2025-03-20T20:58:22.103Z',
     isDeleted: false,
-    updatedAt: '2025-03-20T21:30:31.723Z'
+    updatedAt: '2025-03-20T21:30:31.723Z',
   },
   {
     _id: '67dc8170e5fd8cff88066fec',
@@ -252,7 +252,7 @@ export const pagenatedExamplesMockData = [
     __v: 0,
     createdAt: '2025-03-20T20:58:22.103Z',
     isDeleted: false,
-    updatedAt: '2025-03-20T21:30:31.723Z'
+    updatedAt: '2025-03-20T21:30:31.723Z',
   },
   {
     _id: '67dc8170e5fd8cff88066fed',
@@ -261,7 +261,7 @@ export const pagenatedExamplesMockData = [
     __v: 0,
     createdAt: '2025-03-20T20:58:22.103Z',
     isDeleted: false,
-    updatedAt: '2025-03-20T21:30:31.723Z'
+    updatedAt: '2025-03-20T21:30:31.723Z',
   },
   {
     _id: '67dc8170e5fd8cff88066fee',
@@ -270,7 +270,7 @@ export const pagenatedExamplesMockData = [
     __v: 0,
     createdAt: '2025-03-20T20:58:22.103Z',
     isDeleted: false,
-    updatedAt: '2025-03-20T21:30:31.723Z'
+    updatedAt: '2025-03-20T21:30:31.723Z',
   },
   {
     _id: '67dc8170e5fd8cff88066fef',
@@ -279,7 +279,7 @@ export const pagenatedExamplesMockData = [
     __v: 0,
     createdAt: '2025-03-20T20:58:22.103Z',
     isDeleted: false,
-    updatedAt: '2025-03-20T21:30:31.723Z'
+    updatedAt: '2025-03-20T21:30:31.723Z',
   },
   {
     _id: '67dc8170e5fd8cff88066ff0',
@@ -288,6 +288,6 @@ export const pagenatedExamplesMockData = [
     __v: 0,
     createdAt: '2025-03-20T20:58:22.103Z',
     isDeleted: false,
-    updatedAt: '2025-03-20T21:30:31.723Z'
-  }
-]
+    updatedAt: '2025-03-20T21:30:31.723Z',
+  },
+];

@@ -1,1 +1,1 @@
-export * from './EntityNotFoundException'
+export * from './EntityNotFoundException';
