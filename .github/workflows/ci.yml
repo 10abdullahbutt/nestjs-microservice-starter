@@ -8,7 +8,7 @@ on:
 
 jobs:
   build-test-lint:
-    name: Build, Lint, Test, Snyk
+    name: Build, Lint, Test
     runs-on: ubuntu-latest
 
     steps:

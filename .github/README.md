@@ -13,7 +13,6 @@ This directory contains GitHub Actions workflows for automated CI/CD, testing, a
 - **Lint:** Runs ESLint and code formatting checks
 - **Test:** Runs unit tests and e2e tests with Redis service
 - **Build:** Builds the project and uploads artifacts
-- **Security:** Runs npm audit and Snyk security scans
 
 **Features:**
 
@@ -93,13 +92,6 @@ This directory contains GitHub Actions workflows for automated CI/CD, testing, a
 ## Configuration
 
 ### Environment Variables
-
-Set these secrets in your GitHub repository:
-
-```bash
-SNYK_TOKEN=your_snyk_token
-GITHUB_TOKEN=your_github_token
-```
 
 ### Required npm Scripts
 
