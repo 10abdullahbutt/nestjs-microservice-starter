@@ -51,12 +51,12 @@ class MockRedis {
   }
 
   // Mock event handlers
-  on(event: string, callback: Function): this {
+  on(_event: string, _callback: (...args: any[]) => void): this {
     // Mock event handling
     return this;
   }
 
-  off(event: string, callback: Function): this {
+  off(_event: string, _callback: (...args: any[]) => void): this {
     // Mock event handling
     return this;
   }
@@ -67,7 +67,7 @@ export const getMockRedisFactory = () => {
     config: {
       url: 'redis://localhost:6379',
       lazyConnect: true,
-      onClientCreated(client: MockRedis) {
+      onClientCreated(_client: MockRedis) {
         // Mock client setup - no actual connection needed
       },
     },
@@ -76,7 +76,6 @@ export const getMockRedisFactory = () => {
 
 // Factory function that returns either real Redis or mock based on environment
 export const getRedisFactory = () => {
-  const configService = new ConfigService();
   const isTestEnvironment = process.env.NODE_ENV === 'test';
 
   if (isTestEnvironment) {
@@ -84,6 +83,7 @@ export const getRedisFactory = () => {
   }
 
   // Import the real Redis factory for non-test environments
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
   const { getIORedisFactory } = require('./ioredis.factory');
   return getIORedisFactory();
 };
