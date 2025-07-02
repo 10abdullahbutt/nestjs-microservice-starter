@@ -1,0 +1,54 @@
+name: Full CI Pipeline
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-test-lint:
+    name: Build, Lint, Test, Snyk, Sonar
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Lint code
+        run: npm run lint
+
+      - name: Run tests
+        run: npm run test
+
+      - name: Build project
+        run: npm run build
+
+      # === SNYK SECURITY SCAN ===
+      - name: Run Snyk to check for vulnerabilities
+        uses: snyk/actions/node@master
+        continue-on-error: true
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          command: test
+
+      # === SONARCLOUD CODE QUALITY ===
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        with:
+          args: >
+            -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }}
+            -Dsonar.organization=${{ secrets.SONAR_ORG }}
+            -Dsonar.token=${{ secrets.SONAR_TOKEN }}
+            -Dsonar.sources=src
+            -Dsonar.tests=test
+            -Dsonar.typescript.lcov.reportPaths=coverage/lcov.info

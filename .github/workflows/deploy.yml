@@ -1,0 +1,117 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        default: 'staging'
+        type: choice
+        options:
+        - staging
+        - production
+
+jobs:
+  deploy-staging:
+    name: Deploy to Staging
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/develop' || (github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'staging')
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Run tests
+      run: npm test
+      
+    - name: Build project
+      run: npm run build
+      env:
+        NODE_ENV: staging
+        
+    - name: Build Docker image
+      run: |
+        docker build -t boolmind-nestjs-boilerplate:staging .
+        
+    - name: Deploy to staging environment
+      run: |
+        echo "Deploying to staging environment"
+        # Add your staging deployment commands here
+        # Example: docker push, kubectl apply, etc.
+        
+    - name: Notify deployment success
+      run: |
+        echo "Successfully deployed to staging environment"
+
+  deploy-production:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' || (github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'production')
+    environment: production
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Run all tests
+      run: |
+        npm test
+        npm run test:e2e
+        
+    - name: Build project
+      run: npm run build
+      env:
+        NODE_ENV: production
+        
+    - name: Build Docker image
+      run: |
+        docker build -t boolmind-nestjs-boilerplate:production .
+        
+    - name: Deploy to production environment
+      run: |
+        echo "Deploying to production environment"
+        # Add your production deployment commands here
+        # Example: docker push, kubectl apply, etc.
+        
+    - name: Notify deployment success
+      run: |
+        echo "Successfully deployed to production environment"
+        
+    - name: Create release
+      uses: actions/create-release@v1
+      if: github.ref == 'refs/heads/main'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: v${{ github.run_number }}
+        release_name: Release v${{ github.run_number }}
+        body: |
+          Production deployment for version ${{ github.run_number }}
+          
+          Changes in this release:
+          - Automated deployment from main branch
+          - All tests passed
+          - Build successful
+        draft: false
+        prerelease: false 

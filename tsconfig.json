@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "esnext",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "noImplicitAny": true,
+    "strictBindCallApply": false,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false,
+    "esModuleInterop": true,
+    "paths": {
+      "@src/shared/*": ["src/common/*"],
+      "@src/shared": ["src/common"],
+      "@src/common/*": ["src/common/*"],
+      "@src/*": ["src/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist", "__tests__"],
+  "include": ["src/**/*.ts", "!src/**/*.spec.ts"]
+}
