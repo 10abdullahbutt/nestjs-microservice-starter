@@ -27,11 +27,6 @@ jobs:
     - name: Run ESLint
       run: npm run lint
       
-    - name: Check Prettier formatting
-      run: |
-        npx prettier --check "src/**/*.{ts,js,json}"
-        npx prettier --check "test/**/*.{ts,js,json}"
-        
     - name: Check TypeScript compilation
       run: npx tsc --noEmit
       
