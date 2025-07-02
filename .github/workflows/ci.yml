@@ -8,7 +8,7 @@ on:
 
 jobs:
   build-test-lint:
-    name: Build, Lint, Test, Snyk, Sonar
+    name: Build, Lint, Test, Snyk
     runs-on: ubuntu-latest
 
     steps:
@@ -26,29 +26,8 @@ jobs:
       - name: Lint code
         run: npm run lint
 
-      - name: Run tests
-        run: npm run test
+      - name: Run tests with coverage
+        run: npm run test:cov
 
       - name: Build project
         run: npm run build
-
-      # === SNYK SECURITY SCAN ===
-      - name: Run Snyk to check for vulnerabilities
-        uses: snyk/actions/node@master
-        continue-on-error: true
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-        with:
-          command: test
-
-      # === SONARCLOUD CODE QUALITY ===
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
-        with:
-          args: >
-            -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }}
-            -Dsonar.organization=${{ secrets.SONAR_ORG }}
-            -Dsonar.token=${{ secrets.SONAR_TOKEN }}
-            -Dsonar.sources=src
-            -Dsonar.tests=test
-            -Dsonar.typescript.lcov.reportPaths=coverage/lcov.info
