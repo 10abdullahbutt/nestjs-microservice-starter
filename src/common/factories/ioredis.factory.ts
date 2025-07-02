@@ -3,21 +3,35 @@ import { ConfigService } from '@nestjs/config';
 
 export const getIORedisFactory = () => {
   const configService = new ConfigService();
+  const isTestEnvironment = process.env.NODE_ENV === 'test';
+
   return {
     config: {
       url: configService.get<string>('REDIS_HOST'),
+      lazyConnect: isTestEnvironment, // Don't connect immediately in tests
+      retryDelayOnFailover: isTestEnvironment ? 0 : 100,
+      maxRetriesPerRequest: isTestEnvironment ? 0 : 3,
       onClientCreated(client: Redis) {
         client.on('connect', () => {
-          console.log('Redis connected');
+          if (!isTestEnvironment) {
+            console.log('Redis connected');
+          }
         });
         client.on('reconnecting', () => {
-          console.log('Redis reconnected');
+          if (!isTestEnvironment) {
+            console.log('Redis reconnected');
+          }
         });
         client.on('close', () => {
-          console.log('Redis disconnected');
+          if (!isTestEnvironment) {
+            console.log('Redis disconnected');
+          }
         });
         client.on('error', (error) => {
-          console.log('Redis connection failed! ', error);
+          // Only log Redis errors in non-test environments
+          if (!isTestEnvironment) {
+            console.log('Redis connection failed! ', error);
+          }
         });
       },
     },

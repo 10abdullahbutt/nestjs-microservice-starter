@@ -2,7 +2,7 @@ import { RedisModule } from '@liaoliaots/nestjs-redis';
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { APP_FILTER } from '@nestjs/core';
 import { MongooseModule } from '@nestjs/mongoose';
-import { getIORedisFactory, getMongooseFactory } from '@src/shared';
+import { getMongooseFactory, getRedisFactory } from '@src/shared';
 import { CustomConfigModule } from './config.module';
 import { HttpExceptionFilter } from './common/exception-filter';
 import { LoggerMiddleware } from './common/middlewares';
@@ -12,7 +12,7 @@ import { HealthModule } from './modules/health';
 @Module({
   imports: [
     CustomConfigModule,
-    RedisModule.forRoot(getIORedisFactory()),
+    RedisModule.forRoot(getRedisFactory()),
     MongooseModule.forRootAsync({ useFactory: getMongooseFactory() }),
     ExampleModule,
     HealthModule,
