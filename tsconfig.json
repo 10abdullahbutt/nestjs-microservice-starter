@@ -19,9 +19,10 @@
     "noFallthroughCasesInSwitch": false,
     "esModuleInterop": true,
     "paths": {
-      "@src/shared/*": ["src/shared/*"],
-      "@src/shared": ["src/shared"],
-      "@src/*": ["*"]
+      "@src/shared/*": ["src/common/*"],
+      "@src/shared": ["src/common"],
+      "@src/common/*": ["src/common/*"],
+      "@src/*": ["src/*"]
     }
   },
   "exclude": ["node_modules", "dist", "__tests__"],

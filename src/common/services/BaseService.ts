@@ -1,7 +1,7 @@
 import { Model } from 'mongoose'
-import { getPaginatedData } from '..'
 import { EntityNotFoundException } from '../exceptions'
 import { IDeleteById, IGetAll, IPaginatedData } from '../interface/interface'
+import { getPaginatedData } from '../utils'
 
 export abstract class BaseMongoCrudService<T> {
   protected model: Model<T>

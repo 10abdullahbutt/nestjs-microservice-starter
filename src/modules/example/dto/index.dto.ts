@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger'
 import { IsString } from 'class-validator'
 
-export class CreateTabDto {
+export class CreateExampleDto {
   @ApiProperty()
   @IsString()
   name: string

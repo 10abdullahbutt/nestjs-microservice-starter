@@ -27,11 +27,6 @@ export interface IGetAll {
   search?: string
 }
 
-export interface IGetAllContactsOnly extends IGetAll {
-  status?: string
-  program?: string
-}
-
 //eslint-disable-next-line
 export interface IMongoService<T, D> {
   create(input: T | D): Promise<T>

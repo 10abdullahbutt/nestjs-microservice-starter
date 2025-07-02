@@ -1,6 +1,6 @@
 import { MongooseModule } from '@nestjs/mongoose'
 import { Schema } from 'mongoose'
-import { getModelFactory } from '..'
+import { getModelFactory } from '../utils'
 
 export const getMongoSchema = (name: string, schema: Schema) =>
   MongooseModule.forFeatureAsync([

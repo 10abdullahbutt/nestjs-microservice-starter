@@ -12,6 +12,6 @@ export abstract class BaseMongooseSchema {
   @Prop({ default: false, index: true })
   isDeleted?: boolean
 
-  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'UserRole', index: true, required: false })
+  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'User', index: true, required: false })
   createdBy?: string | mongoose.Schema.Types.ObjectId
 }

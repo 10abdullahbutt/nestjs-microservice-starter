@@ -4,12 +4,13 @@ import { APP_FILTER } from '@nestjs/core'
 import { MongooseModule } from '@nestjs/mongoose'
 import { getIORedisFactory, getMongooseFactory } from '@src/shared'
 import { CustomConfigModule } from './config.module'
-import { HttpExceptionFilter } from './shared/exception-filter'
-import { LoggerMiddleware } from './shared/middlewares'
-import { TabModule } from './tab/tab.module'
+import { HttpExceptionFilter } from './common/exception-filter'
+import { LoggerMiddleware } from './common/middlewares'
+import { ExampleModule } from './modules/example/example.module'
+import { HealthModule } from './modules/health'
 
 @Module({
-  imports: [CustomConfigModule, RedisModule.forRoot(getIORedisFactory()), MongooseModule.forRootAsync({ useFactory: getMongooseFactory() }), TabModule],
+  imports: [CustomConfigModule, RedisModule.forRoot(getIORedisFactory()), MongooseModule.forRootAsync({ useFactory: getMongooseFactory() }), ExampleModule, HealthModule],
   providers: [
     {
       provide: APP_FILTER,
