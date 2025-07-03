@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package example;
+
+message Example {
+  string _id       = 1;
+  string name      = 2;
+  string type      = 3;
+  string createdAt = 4;
+  string updatedAt = 5;
+  string isDeleted = 6;
+}
+
+message ExamplesList {
+  repeated Example items = 1;
+}
+
+message CreateExampleInput {
+  string name      = 1;
+  string type      = 2;
+}
+
+message ExampleListInput {
+  string type         = 1;
+}
+
+service ExampleService {
+  rpc getAllExamplesList (ExampleListInput)   returns (ExamplesList) {}
+  rpc create         (CreateExampleInput) returns (Example)      {}
+} 

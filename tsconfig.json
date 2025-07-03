@@ -1,20 +1,30 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "target": "es2021",
-    "strict": true,
-    "noImplicitAny": false,
-    "moduleResolution": "node",
-    "baseUrl": "./",
-    "paths": {
-      "*": ["node_modules/*", "src/types/*"]
-    },
-    "outDir": "./dist",
-    "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "experimentalDecorators": true,
+    "declaration": true,
+    "removeComments": true,
     "emitDecoratorMetadata": true,
-    "skipLibCheck": true
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "esnext",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "noImplicitAny": true,
+    "strictBindCallApply": false,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false,
+    "esModuleInterop": true,
+    "paths": {
+      "@src/shared/*": ["src/common/*"],
+      "@src/shared": ["src/common"],
+      "@src/common/*": ["src/common/*"],
+      "@src/*": ["src/*"]
+    }
   },
-  "exclude": ["node_modules", "dist"]
+  "exclude": ["node_modules", "dist", "__tests__"],
+  "include": ["src/**/*.ts", "test/**/*.ts", "!src/**/*.spec.ts"]
 }

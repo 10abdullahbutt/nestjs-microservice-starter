@@ -1,0 +1,144 @@
+name: Code Quality
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  lint-and-format:
+    name: Lint and Format Check
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci --legacy-peer-deps
+      
+    - name: Run ESLint
+      run: npm run lint
+      
+    - name: Check TypeScript compilation
+      run: npx tsc --noEmit
+      
+    - name: Check for unused dependencies
+      run: npx depcheck || echo "Depcheck completed with warnings"
+
+  complexity-analysis:
+    name: Code Complexity Analysis
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci --legacy-peer-deps
+      
+    - name: Install complexity analysis tools
+      run: |
+        npm install -g complexity-report
+        npm install -g jscpd
+        
+    - name: Analyze code complexity
+      run: |
+        npx complexity-report src/ > complexity-report.txt || echo "Complexity analysis completed"
+        
+    - name: Check for code duplication
+      run: |
+        npx jscpd src/ --reporters json > duplication-report.json || echo "Duplication analysis completed"
+        
+    - name: Upload analysis reports
+      uses: actions/upload-artifact@v4
+      with:
+        name: code-analysis-reports
+        path: |
+          complexity-report.txt
+          duplication-report.json
+        retention-days: 30
+
+  test-coverage:
+    name: Test Coverage Analysis
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci --legacy-peer-deps
+      
+    - name: Run tests with coverage
+      run: npm run test:cov
+      
+    - name: Upload coverage reports
+      uses: actions/upload-artifact@v4
+      with:
+        name: coverage-reports
+        path: coverage/
+        retention-days: 30
+        
+    - name: Check coverage thresholds
+      run: |
+        # Check if coverage meets minimum thresholds
+        COVERAGE=$(cat coverage/lcov-report/index.html | grep -o 'All files[^%]*' | grep -o '[0-9]*\.[0-9]*%' | head -1 | sed 's/%//')
+        if (( $(echo "$COVERAGE < 80" | bc -l) )); then
+          echo "Coverage is below 80% threshold: $COVERAGE%"
+          exit 1
+        else
+          echo "Coverage is above 80% threshold: $COVERAGE%"
+        fi
+
+  bundle-analysis:
+    name: Bundle Analysis
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci --legacy-peer-deps
+      
+    - name: Build project
+      run: npm run build
+      
+    - name: Analyze bundle size
+      run: |
+        echo "Bundle size analysis:"
+        du -sh dist/
+        find dist/ -name "*.js" -exec wc -c {} + | sort -n
+        
+    - name: Upload bundle analysis
+      uses: actions/upload-artifact@v4
+      with:
+        name: bundle-analysis
+        path: dist/
+        retention-days: 7 
