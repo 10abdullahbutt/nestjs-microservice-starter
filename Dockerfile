@@ -1,7 +1,7 @@
 # Use a more recent Node.js version
 FROM node:18-alpine
 
-WORKDIR /usr/home/user-service
+WORKDIR /usr/home/nestjs-boilerplate
 
 RUN apk add --no-cache curl && \
     curl -o- -L https://yarnpkg.com/install.sh | sh
