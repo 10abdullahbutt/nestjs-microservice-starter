@@ -1,9 +1,9 @@
 {
-  "name": "user-svc",
+  "name": "@10abdullahbutt/nestjs-boilerplate",
   "version": "0.0.1",
   "description": "",
-  "author": "",
-  "private": true,
+  "author": "Abdullah Butt",
+  "private": false,
   "license": "UNLICENSED",
   "scripts": {
     "build": "nest build",
